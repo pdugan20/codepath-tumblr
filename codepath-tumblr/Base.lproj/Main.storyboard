@@ -115,11 +115,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="85M-9Q-qOE">
-                                <rect key="frame" x="0.0" y="512" width="320" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="85M-9Q-qOE" userLabel="NevermindButton">
+                                <rect key="frame" x="0.0" y="515" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Nevermind"/>
+                                <state key="normal" backgroundImage="nevermind"/>
                                 <connections>
                                     <action selector="didPressNevermindButton:" destination="Dis-Vg-DEO" eventType="touchUpInside" id="6T4-On-iKa"/>
                                 </connections>
@@ -128,8 +128,14 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="chatButton" destination="8tb-u2-zbv" id="Scs-LV-nUA"/>
+                        <outlet property="linkButton" destination="b1b-EP-GUX" id="QXL-ir-CiS"/>
                         <outlet property="mainView" destination="G9H-Dz-bsb" id="brh-M3-1PT"/>
                         <outlet property="nevermindButton" destination="85M-9Q-qOE" id="idw-zd-J00"/>
+                        <outlet property="photoButton" destination="e79-iV-Jja" id="9IC-Ho-7f9"/>
+                        <outlet property="quoteButton" destination="VdE-bD-PzL" id="hk3-I7-bwQ"/>
+                        <outlet property="textButton" destination="H9S-e8-gDx" id="g6b-LV-C2l"/>
+                        <outlet property="videoButton" destination="Buv-16-BO4" id="XKX-d8-CEX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsA-Ec-oWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="pqP-HO-xxm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending_feed" id="fZL-Ep-Rub">
@@ -185,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDc-xB-5GA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2079" y="936"/>
+            <point key="canvasLocation" x="2071" y="936"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="lWn-Ck-XrA">
@@ -282,6 +288,7 @@
         <image name="home_overlay" width="320" height="100"/>
         <image name="home_spinner" width="146" height="146"/>
         <image name="link_icon" width="75" height="95"/>
+        <image name="nevermind" width="320" height="53"/>
         <image name="photo_icon" width="75" height="95"/>
         <image name="quote_icon" width="75" height="96"/>
         <image name="search_feed" width="320" height="524"/>

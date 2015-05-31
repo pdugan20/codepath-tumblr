@@ -44,6 +44,7 @@ class TabBarViewController: UIViewController {
     var accountViewController: UIViewController!
     var trendingViewController: UIViewController!
     var composeViewController: UIViewController!
+    var currentViewController: UIViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,7 @@ class TabBarViewController: UIViewController {
         addChildViewController(homeViewController)
         homeViewController.view.frame = contentView.bounds
         contentView.addSubview(homeViewController.view)
+        currentViewController = homeViewController
     }
     
     @IBAction func didPressHomeButton(sender: UIButton) {
@@ -63,9 +65,12 @@ class TabBarViewController: UIViewController {
         
         homeViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("HomeViewController") as! UIViewController
         
+        removeChildView(currentViewController)
         addChildViewController(homeViewController)
         homeViewController.view.frame = contentView.bounds
         contentView.addSubview(homeViewController.view)
+        homeViewController.didMoveToParentViewController(self)
+        currentViewController = homeViewController
     }
 
     
@@ -75,9 +80,12 @@ class TabBarViewController: UIViewController {
         
         searchViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("SearchViewController") as! UIViewController
         
+        removeChildView(currentViewController)
         addChildViewController(searchViewController)
         searchViewController.view.frame = contentView.bounds
         contentView.addSubview(searchViewController.view)
+        searchViewController.didMoveToParentViewController(self)
+        currentViewController = searchViewController
     }
     
     @IBAction func didPressAccountButton(sender: UIButton) {
@@ -86,9 +94,12 @@ class TabBarViewController: UIViewController {
         
         accountViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("AccountViewController") as! UIViewController
         
+        removeChildView(currentViewController)
         addChildViewController(accountViewController)
         accountViewController.view.frame = contentView.bounds
         contentView.addSubview(accountViewController.view)
+        accountViewController.didMoveToParentViewController(self)
+        currentViewController = accountViewController
     }
     
     @IBAction func didPressTrendingButton(sender: UIButton) {
@@ -97,17 +108,23 @@ class TabBarViewController: UIViewController {
         
         trendingViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("TrendingViewController") as! UIViewController
         
+        removeChildView(currentViewController)
         addChildViewController(trendingViewController)
         trendingViewController.view.frame = contentView.bounds
         contentView.addSubview(trendingViewController.view)
+        trendingViewController.didMoveToParentViewController(self)
+        currentViewController = trendingViewController
     }
     
     @IBAction func didPressComposeButton(sender: UIButton) {
         composeViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("ComposeViewController") as! UIViewController
         
+        // removeChildView(currentViewController)
         addChildViewController(composeViewController)
         composeViewController.view.frame = contentView.bounds
         contentView.addSubview(composeViewController.view)
+        composeViewController.didMoveToParentViewController(self)
+        // currentViewController = composeViewController
     }
     
     // Resets selected states for all tab-bar icons
@@ -117,6 +134,13 @@ class TabBarViewController: UIViewController {
         accountButton.setBackgroundImage(accountIcon, forState: UIControlState.Normal)
         trendingButton.setBackgroundImage(trendingIcon, forState: UIControlState.Normal)
         
+    }
+    
+    // Remove child UIView
+    func removeChildView (content: UIViewController) {
+        content.willMoveToParentViewController(nil)
+        content.view.removeFromSuperview()
+        content.removeFromParentViewController()
     }
     
     // Sets status bar style to either light or dark (default)
