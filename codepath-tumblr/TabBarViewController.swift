@@ -30,9 +30,13 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var trendingButton: UIButton!
+    @IBOutlet weak var explorePopup: UIImageView!
     
     // Main Storyboard
     var tumblrStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    // Popup toggle
+    var popUpGlobalToggle: Bool!
 
     // Main UIViews
     @IBOutlet weak var tabBarView: UIView!
@@ -57,6 +61,14 @@ class TabBarViewController: UIViewController {
         homeViewController.view.frame = contentView.bounds
         contentView.addSubview(homeViewController.view)
         currentViewController = homeViewController
+        
+        self.popUpGlobalToggle = true
+        UIView.animateWithDuration(2, delay: 0, options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat | UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.explorePopup.center.y = 492
+            }) { (Bool) -> Void in
+                // Do something
+        }
+        
     }
     
     @IBAction func didPressHomeButton(sender: UIButton) {
@@ -86,6 +98,12 @@ class TabBarViewController: UIViewController {
         contentView.addSubview(searchViewController.view)
         searchViewController.didMoveToParentViewController(self)
         currentViewController = searchViewController
+        
+        delay(2, { () -> () in
+            self.explorePopup.hidden = true
+            self.popUpGlobalToggle = false
+        })
+        
     }
     
     @IBAction func didPressAccountButton(sender: UIButton) {
@@ -125,6 +143,10 @@ class TabBarViewController: UIViewController {
         contentView.addSubview(composeViewController.view)
         composeViewController.didMoveToParentViewController(self)
         // currentViewController = composeViewController
+        
+        if popUpGlobalToggle == true {
+            self.explorePopup.hidden = true
+        }
     }
     
     // Resets selected states for all tab-bar icons

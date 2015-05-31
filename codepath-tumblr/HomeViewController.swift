@@ -10,10 +10,21 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    var fadeTransition: FadeTransition!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // Do something
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        var destinationViewController = segue.destinationViewController as! LoginViewController
+        fadeTransition = FadeTransition()
+        fadeTransition.duration = 0.3
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationViewController.transitioningDelegate = fadeTransition
+    
     }
 
     override func didReceiveMemoryWarning() {

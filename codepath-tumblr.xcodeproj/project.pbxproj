@@ -17,6 +17,10 @@
 		E794A1661B1B742000EEF2B2 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794A1651B1B742000EEF2B2 /* ComposeViewController.swift */; };
 		E794A1681B1B810F00EEF2B2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794A1671B1B810F00EEF2B2 /* AccountViewController.swift */; };
 		E794A16A1B1B815E00EEF2B2 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794A1691B1B815E00EEF2B2 /* TrendingViewController.swift */; };
+		E794A16C1B1BC68000EEF2B2 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794A16B1B1BC68000EEF2B2 /* Common.swift */; };
+		E794A16E1B1BCDFA00EEF2B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794A16D1B1BCDFA00EEF2B2 /* LoginViewController.swift */; };
+		E794A1741B1BD58D00EEF2B2 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794A1731B1BD58D00EEF2B2 /* BaseTransition.swift */; };
+		E794A1761B1BD59A00EEF2B2 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794A1751B1BD59A00EEF2B2 /* FadeTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		E794A1651B1B742000EEF2B2 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		E794A1671B1B810F00EEF2B2 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E794A1691B1B815E00EEF2B2 /* TrendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
+		E794A16B1B1BC68000EEF2B2 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E794A16D1B1BCDFA00EEF2B2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E794A1731B1BD58D00EEF2B2 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
+		E794A1751B1BD59A00EEF2B2 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				E794A13E1B1AD55800EEF2B2 /* AppDelegate.swift */,
+				E794A1731B1BD58D00EEF2B2 /* BaseTransition.swift */,
+				E794A16B1B1BC68000EEF2B2 /* Common.swift */,
+				E794A1751B1BD59A00EEF2B2 /* FadeTransition.swift */,
 				E794A1421B1AD55800EEF2B2 /* Main.storyboard */,
 				E794A1601B1AD7D700EEF2B2 /* View Controllers */,
 				E794A1451B1AD55800EEF2B2 /* Images.xcassets */,
@@ -122,6 +133,7 @@
 		E794A1601B1AD7D700EEF2B2 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E794A16D1B1BCDFA00EEF2B2 /* LoginViewController.swift */,
 				E794A1691B1B815E00EEF2B2 /* TrendingViewController.swift */,
 				E794A1671B1B810F00EEF2B2 /* AccountViewController.swift */,
 				E794A1651B1B742000EEF2B2 /* ComposeViewController.swift */,
@@ -231,12 +243,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E794A16E1B1BCDFA00EEF2B2 /* LoginViewController.swift in Sources */,
+				E794A1741B1BD58D00EEF2B2 /* BaseTransition.swift in Sources */,
+				E794A16C1B1BC68000EEF2B2 /* Common.swift in Sources */,
 				E794A16A1B1B815E00EEF2B2 /* TrendingViewController.swift in Sources */,
 				E794A1661B1B742000EEF2B2 /* ComposeViewController.swift in Sources */,
 				E794A1621B1AD8BC00EEF2B2 /* TabBarViewController.swift in Sources */,
 				E794A1681B1B810F00EEF2B2 /* AccountViewController.swift in Sources */,
 				E794A13F1B1AD55800EEF2B2 /* AppDelegate.swift in Sources */,
 				E794A1641B1B726B00EEF2B2 /* SearchViewController.swift in Sources */,
+				E794A1761B1BD59A00EEF2B2 /* FadeTransition.swift in Sources */,
 				E794A15F1B1AD7CF00EEF2B2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
