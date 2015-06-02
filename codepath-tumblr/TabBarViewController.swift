@@ -55,7 +55,7 @@ class TabBarViewController: UIViewController {
         self.tabBarView.backgroundColor = self.tabBarBgColor
         homeButton.setBackgroundImage(homeSelectedIcon, forState: UIControlState.Normal)
         
-        homeViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
+        homeViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("HomeViewController") as! UIViewController
         
         addChildViewController(homeViewController)
         homeViewController.view.frame = contentView.bounds
@@ -75,7 +75,7 @@ class TabBarViewController: UIViewController {
         resetTabBar()
         sender.setBackgroundImage(homeSelectedIcon, forState: UIControlState.Normal)
         
-        homeViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
+        homeViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("HomeViewController")as! UIViewController
         
         removeChildView(currentViewController)
         addChildViewController(homeViewController)
@@ -90,7 +90,7 @@ class TabBarViewController: UIViewController {
         resetTabBar()
         sender.setBackgroundImage(searchSelectedIcon, forState: UIControlState.Normal)
         
-        searchViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
+        searchViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("SearchViewController")as! UIViewController
         
         removeChildView(currentViewController)
         addChildViewController(searchViewController)
@@ -110,7 +110,7 @@ class TabBarViewController: UIViewController {
         resetTabBar()
         sender.setBackgroundImage(accountSelectedIcon, forState: UIControlState.Normal)
         
-        accountViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
+        accountViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("AccountViewController")as! UIViewController
         
         removeChildView(currentViewController)
         addChildViewController(accountViewController)
@@ -124,7 +124,7 @@ class TabBarViewController: UIViewController {
         resetTabBar()
         sender.setBackgroundImage(trendingSelectedIcon, forState: UIControlState.Normal)
         
-        trendingViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("TrendingViewController") as UIViewController
+        trendingViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("TrendingViewController")as! UIViewController
         
         removeChildView(currentViewController)
         addChildViewController(trendingViewController)
@@ -135,7 +135,7 @@ class TabBarViewController: UIViewController {
     }
     
     @IBAction func didPressComposeButton(sender: UIButton) {
-        composeViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("ComposeViewController") as UIViewController
+        composeViewController = tumblrStoryboard.instantiateViewControllerWithIdentifier("ComposeViewController") as! UIViewController
         
         // removeChildView(currentViewController)
         addChildViewController(composeViewController)
